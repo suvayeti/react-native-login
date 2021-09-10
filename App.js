@@ -20,6 +20,8 @@ import SupportScreen from './screens/stack/SupportScreen';
 import BookMarkScreen from './screens/stack/BookMarkScreen';
 import SettingScreen from './screens/stack/SettingScreen';
 
+import RootStackScreen from './screens/stack/RootStackScreen';
+
 const Drawer=createDrawerNavigator();
 const Tabs = createMaterialBottomTabNavigator();
 
@@ -30,13 +32,15 @@ const App = () => {
   const Drawer=createDrawerNavigator();
   return (
     <NavigationContainer>
+      {/* <RootStackScreen/> */}
 
-      <Drawer.Navigator drawerContent={props=><DrawerContent{...props}/>}>
+      {/* <Drawer.Navigator drawerContent={props=><DrawerContent{...props}/>}>
         <Drawer.Screen name="HomeDrawer" component={MainTabScreen}/>
-        <Drawer.Screen name="SupportScreen" component={SupportScreen}/>
+        <Drawer.Screen name="SupportScreen" component={SupportScreen}/> 
         <Drawer.Screen name="BookMarkScreen" component ={BookMarkScreen}/>
         <Drawer.Screen name="SettingScreen" component={SettingScreen} />
-      </Drawer.Navigator>
+      </Drawer.Navigator> */}
+      asdfdsafdsaf sdafsdaf
 
     </NavigationContainer>
     

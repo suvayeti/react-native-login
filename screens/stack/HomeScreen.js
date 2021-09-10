@@ -4,7 +4,7 @@ import { SafeAreaView ,Text,StyleSheet, Button} from 'react-native';
 const HomeScreen = (props) => {
     return ( 
         <SafeAreaView style={styles.root}> 
-            <Text>I am home screen!</Text>
+            <Text>I am a home screen!</Text>
             <Button title="Go to Details"
             onPress={()=>{
                 props.navigation.navigate("Details")
