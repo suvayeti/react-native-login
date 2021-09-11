@@ -8,7 +8,8 @@ const ProfileScreen = () => {
                 THis is Profile Screen.
             </Text>
         </SafeAreaView>
-     );
+    )
+        
 }
  
 export default ProfileScreen;

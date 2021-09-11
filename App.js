@@ -31,17 +31,17 @@ const App = () => {
   // const Stack=createStackNavigator();
   const Drawer=createDrawerNavigator();
   return (
+  
     <NavigationContainer>
       {/* <RootStackScreen/> */}
 
-      {/* <Drawer.Navigator drawerContent={props=><DrawerContent{...props}/>}>
+      <Drawer.Navigator drawerContent={props=><DrawerContent{...props}/>}>
         <Drawer.Screen name="HomeDrawer" component={MainTabScreen}/>
         <Drawer.Screen name="SupportScreen" component={SupportScreen}/> 
         <Drawer.Screen name="BookMarkScreen" component ={BookMarkScreen}/>
         <Drawer.Screen name="SettingScreen" component={SettingScreen} />
-      </Drawer.Navigator> */}
-      asdfdsafdsaf sdafsdaf
-
+      </Drawer.Navigator>
+     
     </NavigationContainer>
     
   );

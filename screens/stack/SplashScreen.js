@@ -3,7 +3,7 @@ import { View, Text, Button, StyleSheet, SafeAreaView } from 'react-native';
 
 const SplashScreen = () => {
     return ( 
-        <SafeAreaView>
+        <SafeAreaView style ={styles.root}>
             <Text>
                 SplashScreen
             </Text>
@@ -20,7 +20,7 @@ const SplashScreen = () => {
 export default SplashScreen;
 
 const styles = StyleSheet.create({
-    container:{
+    root:{
         flex: 1 ,
         alignItems: 'center',
         justifyContent:'center',
