@@ -8,6 +8,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Feather from 'react-native-vector-icons/Feather'
 import { NavigationContainer } from '@react-navigation/native';
 
+import { AuthContext } from '../../components/context';
+
 const SignUpScreen = ({navigation}) => {
     const [data, setData]=useState({
         email:'',
@@ -46,7 +48,7 @@ const SignUpScreen = ({navigation}) => {
     }
 
     const updateSecureTextEntry=()=>{
-        console.warn(data.password)
+        // console.warn(data.password)
         setData({
             ...data,
             secureTextEntry: !data.secureTextEntry
@@ -55,7 +57,7 @@ const SignUpScreen = ({navigation}) => {
     }
 
     const updateConfirmSecureTextEntry=()=>{
-        console.warn(data.password)
+        // console.warn(data.password)
         setData({
             ...data,
             confirmSecureTextEntry: !data.confirmSecureTextEntry

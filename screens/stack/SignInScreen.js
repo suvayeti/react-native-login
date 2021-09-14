@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import { View, Text, Button, StyleSheet, SafeAreaView,TouchableOpacity, 
     Dimensions, Platform, TextInput, StatusBar } from 'react-native';
 import * as Animatable from 'react-native-animatable';
@@ -8,7 +8,14 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Feather from 'react-native-vector-icons/Feather'
 import { NavigationContainer } from '@react-navigation/native';
 
+import { AuthContext } from '../../components/context';
+
+
+
 const SignInScreen = ({navigation}) => {
+
+    const { signIn } =useContext(AuthContext)
+
     const [data, setData]=useState({
         email:'',
         password:'',
@@ -38,13 +45,18 @@ const SignInScreen = ({navigation}) => {
     }
 
     const updateSecureTextEntry=()=>{
-        console.warn(data.password)
+        // console.warn(data.password)
         setData({
             ...data,
             secureTextEntry: !data.secureTextEntry
 
         })
     }
+
+    const loginHandle=(userName,password)=>{
+        signIn(userName,password)
+    }
+
     return ( 
         <View style ={styles.root}>
             <StatusBar backgroundColor='#009387' barStyle="light-content"/>
@@ -112,7 +124,14 @@ const SignInScreen = ({navigation}) => {
                         }
                     </TouchableOpacity>
                 </View>
+                <TouchableOpacity>
+                    <Text style={{color:"#009387", marginTop:15}}>Forgot Password</Text>
+                </TouchableOpacity>
                 <View style={styles.button}>
+                    <TouchableOpacity
+                        style={styles.signIn}
+                        onPress={()=>{loginHandle(data.email, data.password)}}
+                    >
                     <LinearGradient
                          colors ={['#FFB300', '#FF6F00']}
                          style={styles.signIn}
@@ -120,6 +139,7 @@ const SignInScreen = ({navigation}) => {
                     
                         <Text style={[styles.textSign],{color:"#fff"}}>Sign In</Text>
                     </LinearGradient>
+                    </TouchableOpacity>
                     <TouchableOpacity
                         onPress={()=>navigation.navigate('SignUpScreen')}
                         style={[styles.signIn,{

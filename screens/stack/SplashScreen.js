@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, Dimensions,Image } from 'react-native';
+import { View, Text, Button, StyleSheet, SafeAreaView, Dimensions,Image, Platform } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 const logo = require('../../logo.png')
 import LinearGradient from 'react-native-linear-gradient';
@@ -81,6 +81,14 @@ const styles = StyleSheet.create({
         color:'#05375a',
         fontSize:30,
         fontWeight:'bold',
+        ...Platform.select({
+            ios:{
+                fontFamily:'AvenirNext-Regular'
+            },
+            android:{
+                fontFamily:'Roboto'
+            }
+        })
     },
     text:{
         color:'grey',
